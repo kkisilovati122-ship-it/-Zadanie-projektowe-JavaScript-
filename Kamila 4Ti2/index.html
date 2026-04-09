@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator Ofert IT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Generator Wyceny IT</h1>
+            <p>Wybierz usługi i wygeneruj ofertę</p>
+        </header>
+
+        <main>
+            <section class="calculator-section">
+                <form id="quote-form">
+                    <div class="form-group">
+                        <label for="client-name">Nazwa klienta / firmy:</label>
+                        <input type="text" id="client-name" required placeholder="np. Jan Kowalski">
+                        <span id="name-error" class="error-msg"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <h3>Dostępne usługi:</h3>
+                        <div id="services-container">
+                            </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="priority">Priorytet realizacji:</label>
+                        <select id="priority">
+                            <option value="1">Standardowy (brak dopłaty)</option>
+                            <option value="1.2">Pilny (+20% do ceny)</option>
+                            <option value="1.5">Ekspresowy (+50% do ceny)</option>
+                        </select>
+                    </div>
+
+                    <div class="summary-box">
+                        <h3>Szacowana kwota: <span id="total-price">0</span> PLN</h3>
+                    </div>
+
+                    <button type="submit" id="submit-btn">Zapisz wycenę</button>
+                </form>
+            </section>
+
+            <section class="history-section">
+                <h2>Zapisane wyceny</h2>
+                <div class="filters">
+                    <input type="text" id="search-input" placeholder="Szukaj po nazwie klienta...">
+                </div>
+                <ul id="quotes-list">
+                    </ul>
+                <button id="clear-history" class="btn-danger">Wyczyść historię</button>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
